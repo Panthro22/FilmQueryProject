@@ -22,12 +22,8 @@ private int lengt;
 private double repCost;
 private String rating;
 private String features;
-private List<Actor> actor;
-private static final String url = "jdbc:mysql://localhost:3306/student_play?useSSL=false";
-private static final String user = "student";
-private static final String pass = "student";
 
-public Film() throws ClassNotFoundException {
+public Film() {
 	try {
 		Class.forName("com.mysql.jdbc.Driver");			
 	}
@@ -38,7 +34,6 @@ public Film() throws ClassNotFoundException {
 
 public Film(int filmId, String title, String desc, short releaseYear, int langId, int rentDur, double rate, int lengt,
 		double repCost, String rating, String features) {
-	super();
 	this.filmId = filmId;
 	this.title = title;
 	this.desc = desc;
@@ -50,61 +45,9 @@ public Film(int filmId, String title, String desc, short releaseYear, int langId
 	this.repCost = repCost;
 	this.rating = rating;
 	this.features = features;
-	this.actor = null;
+
 }
 
-public Film(int filmId, String title, String desc, short releaseYear, int langId, int rentDur, double rate, int lengt,
-		double repCost, String rating, String features, List<Actor> actor) {
-	super();
-	this.filmId = filmId;
-	this.title = title;
-	this.desc = desc;
-	this.releaseYear = releaseYear;
-	this.langId = langId;
-	this.rentDur = rentDur;
-	this.rate = rate;
-	this.lengt = lengt;
-	this.repCost = repCost;
-	this.rating = rating;
-	this.features = features;
-	this.actor = actor;
-}
-public Film findFilmById() {
-	/*
-	Film film = null;
-	  Connection conn = null;
-	try {
-		conn = DriverManager.getConnection(url, user, pass);
-	} catch (SQLException e) {
-
-		e.printStackTrace();
-	}
-	  String sql = "SELECT id, first_name, last_name FROM actor WHERE id = ?";
-	  PreparedStatement preSt = null;
-	
-	  try {
-		preSt = conn.prepareStatement(sql);
-	} catch (SQLException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
-	
-	  preSt.setInt(1,actorId);
-	  ResultSet actorResult = preSt.executeQuery();
-	  if (actorResult.next()) {
-	    actor = new Actor(); // Create the object
-	    // Here is our mapping of query columns to our object fields:
-	    actor.setId(actorResult.getInt("id"));
-	    actor.setFirstName(actorResult.getString("first_name"));
-	    actor.setLastName(actorResult.getString("last_name"));
-	    actor.setFilm(findFilmsByActorId(actorId)); // An Actor has Films
-	  }
-	  //...
-	  return actor;
-	}*/
-
-	return null;
-}
 public int getFilmId() {
 	return filmId;
 }
@@ -268,9 +211,10 @@ public String toString() {
 			.append(", releaseYear=").append(releaseYear).append(", langId=").append(langId).append(", rentDur=")
 			.append(rentDur).append(", rate=").append(rate).append(", lengt=").append(lengt).append(", repCost=")
 			.append(repCost).append(", rating=").append(rating).append(", features=").append(features)
-			.append(", actor=").append(actor).append("]");
+			.append("]\n");
 	return builder.toString();
 }
+
 
 
 
