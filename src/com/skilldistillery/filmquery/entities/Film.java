@@ -15,7 +15,7 @@ private int filmId;
 private String title;
 private String desc;
 private short releaseYear;
-private int langId;
+private String lang;
 private int rentDur;
 private double rate;
 private int lengt;
@@ -32,13 +32,13 @@ public Film() {
 	}
 }
 
-public Film(int filmId, String title, String desc, short releaseYear, int langId, int rentDur, double rate, int lengt,
+public Film(int filmId, String title, String desc, short releaseYear, String lang, int rentDur, double rate, int lengt,
 		double repCost, String rating, String features) {
 	this.filmId = filmId;
 	this.title = title;
 	this.desc = desc;
 	this.releaseYear = releaseYear;
-	this.langId = langId;
+	this.lang = lang;
 	this.rentDur = rentDur;
 	this.rate = rate;
 	this.lengt = lengt;
@@ -96,14 +96,14 @@ public void setReleaseYear(short releaseYear) {
 
 
 
-public int getLangId() {
-	return langId;
+public String getLang() {
+	return lang;
 }
 
 
 
-public void setLangId(int langId) {
-	this.langId = langId;
+public void setLang(String lang) {
+	this.lang = lang;
 }
 
 
@@ -182,7 +182,7 @@ public void setFeatures(String features) {
 
 @Override
 public int hashCode() {
-	return Objects.hash(desc, features, filmId, langId, lengt, rate, rating, releaseYear, rentDur, repCost, title);
+	return Objects.hash(desc, features, filmId, lang, lengt, rate, rating, releaseYear, rentDur, repCost, title);
 }
 
 
@@ -197,7 +197,7 @@ public boolean equals(Object obj) {
 		return false;
 	Film other = (Film) obj;
 	return Objects.equals(desc, other.desc) && Objects.equals(features, other.features) && filmId == other.filmId
-			&& langId == other.langId && lengt == other.lengt
+			&& lang == other.lang && lengt == other.lengt
 			&& Double.doubleToLongBits(rate) == Double.doubleToLongBits(other.rate)
 			&& Objects.equals(rating, other.rating) && releaseYear == other.releaseYear && rentDur == other.rentDur
 			&& Double.doubleToLongBits(repCost) == Double.doubleToLongBits(other.repCost)
@@ -208,7 +208,7 @@ public boolean equals(Object obj) {
 public String toString() {
 	StringBuilder builder = new StringBuilder();
 	builder.append("Film [filmId=").append(filmId).append(", title=").append(title).append(", desc=").append(desc)
-			.append(", releaseYear=").append(releaseYear).append(", langId=").append(langId).append(", rentDur=")
+			.append(", releaseYear=").append(releaseYear).append(", lang=").append(lang).append(", rentDur=")
 			.append(rentDur).append(", rate=").append(rate).append(", lengt=").append(lengt).append(", repCost=")
 			.append(repCost).append(", rating=").append(rating).append(", features=").append(features)
 			.append("]\n");

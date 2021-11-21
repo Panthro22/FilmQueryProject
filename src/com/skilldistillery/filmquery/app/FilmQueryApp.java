@@ -59,8 +59,10 @@ public class FilmQueryApp {
 			 System.out.println(db.findActorsByFilmId(userChoice));
 			 break;
 		 case 4:
-			 System.out.println("Please enter the word you wish to check title or description of film to get a List of \n films that meet that requirement: ");
-			 String userChoiceWord = input.nextLine();
+			 System.out.println("Please enter the word you wish to check title or "
+			 		+ "description of film to get a List of \n films that meet that requirement: ");
+			 String userChoiceWord = input.next();
+			 input.nextLine();
 			 System.out.println(db.findFilmByFilmWordSearch(userChoiceWord));
 			 break;
 		 case 0:
