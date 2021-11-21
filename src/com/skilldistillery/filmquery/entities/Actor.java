@@ -14,6 +14,7 @@ public class Actor {
 	private int id;
 	private String firstName;
 	private String lastName;
+	private List<Film> films;
 	
 
 		public Actor() {
@@ -79,9 +80,26 @@ public class Actor {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Actor [id=").append(id).append(", firstName=").append(firstName).append(", lastName=")
-				.append(lastName).append("]\n");
+		builder.append("\nActor [id=").append(id).append(", firstName=").append(firstName).append(", lastName=")
+				.append(lastName).append("]").append(films);
 		return builder.toString();
 	}
+
+	public List<Film> getFilms() {
+		return films;
+	}
+
+	public void setFilms(List<Film> films) {
+		this.films = films;
+	}
+
+//	public List<Film> getFilms() {
+//		return films;
+//	}
+//
+//	public void setFilms(List<Film> films) {
+//		this.films = films;
+//	}
+
 
 }
