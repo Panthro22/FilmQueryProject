@@ -78,7 +78,7 @@ public class Actor {
 	}
 	public String toString(String limited) {
 		StringBuilder builder = new StringBuilder();
-		builder.append("\nActor [").append(" firstName=").append(firstName).append(", lastName=")
+		builder.append("\nActor ").append(" firstName=").append(firstName).append(", lastName=")
 				.append(lastName).append(films).append("]");
 		return builder.toString();
 	}
@@ -94,8 +94,8 @@ public class Actor {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Actor [id=").append(id).append(", \nfirstName=").append(firstName).append(", \nlastName=")
-				.append(lastName).append(films).append("]");
+		builder.append("Actor id=").append(id).append(", \nfirstName=").append(firstName).append(", \nlastName=")
+				.append(lastName).append("\n"+films);
 		return builder.toString();
 	}
 

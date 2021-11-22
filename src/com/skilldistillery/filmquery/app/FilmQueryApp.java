@@ -131,15 +131,15 @@ public class FilmQueryApp {
 				System.out.println(actors.toString());
 				System.out.println("Printing Complete");
 
-				userChoice = 2;
+				whileCheck = 2;
 				break;
 			case 2:
 				System.out.println("Returning to main menu.");
-
+				whileCheck = 2;
 				break;
 			default:
 				System.err.println("Please enter a valid option: \n user inputted \"" + userChoice + "\" is not valid");
-
+				
 			}
 		} while (whileCheck == 2);
 

@@ -216,10 +216,9 @@ public String toString(String limitedData) {
 		actorString += actor.toString("JustmodifyToStringintake");
 	}
 	StringBuilder builder = new StringBuilder();
-	builder.append("Film [").append("title=").append(title).append(", \ndesc=").append(desc)
+	builder.append("Film ").append("title=").append(title).append(", \ndesc=").append(desc)
 			.append(", \nreleaseYear=").append(releaseYear).append(", \nlang=").append(lang)
-			.append(", \nrating=").append(rating).append(actorString)
-			.append("]");
+			.append(", \nrating=").append(rating).append("\n"+actorString);
 	
 	return builder.toString();
 }
@@ -228,11 +227,11 @@ public String toString(String limitedData) {
 @Override
 public String toString() {
 	StringBuilder builder = new StringBuilder();
-	builder.append("Film [filmId=").append(filmId).append(", \ntitle=").append(title).append(", \ndesc=").append(desc)
+	builder.append("Film filmId=").append(filmId).append(", \ntitle=").append(title).append(", \ndesc=").append(desc)
 			.append(", \nreleaseYear=").append(releaseYear).append(", \nlang=").append(lang).append(", \nrentDur=")
 			.append(rentDur).append(", \nrate=").append(rate).append(", \nlengt=").append(lengt).append(", \nrepCost=")
 			.append(repCost).append(", \nrating=").append(rating).append(", \nfeatures=").append(features)
-			.append(actors).append("]");
+			.append("\n"+actors);
 	return builder.toString();
 }
 
