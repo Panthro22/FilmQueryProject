@@ -178,6 +178,13 @@ public String getFeatures() {
 public void setFeatures(String features) {
 	this.features = features;
 }
+public List<Actor> getActors() {
+	return actors;
+}
+
+public void setActors(List<Actor> actors) {
+	this.actors = actors;
+}
 
 
 
@@ -188,12 +195,11 @@ public int hashCode() {
 
 
 
-@Override
 public boolean equals(Object obj) {
-	if (this == obj)
-		return true;
 	if (obj == null)
 		return false;
+	if (this.getFilmId() == ((Film)obj).getFilmId())
+		return true;
 	if (getClass() != obj.getClass())
 		return false;
 	Film other = (Film) obj;
@@ -207,7 +213,7 @@ public boolean equals(Object obj) {
 public String toString(String limitedData) {
 	String actorString="";
 	for(Actor actor: actors) {
-		actorString += actor.toString("wasup");
+		actorString += actor.toString("JustmodifyToStringintake");
 	}
 	StringBuilder builder = new StringBuilder();
 	builder.append("Film [").append("title=").append(title).append(", \ndesc=").append(desc)
@@ -218,13 +224,6 @@ public String toString(String limitedData) {
 	return builder.toString();
 }
 
-public List<Actor> getActors() {
-	return actors;
-}
-
-public void setActors(List<Actor> actors) {
-	this.actors = actors;
-}
 
 @Override
 public String toString() {
