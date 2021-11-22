@@ -46,27 +46,41 @@ public class FilmQueryApp {
 				userChoice = input.nextInt();
 				input.nextLine();
 				Film oneFilm = db.findFilmById(userChoice);
+				if( oneFilm != null) {
 				System.out.println(oneFilm.toString("OhDearWork!"));
 				subMenuOption(input, oneFilm);
+				}
+				else {
+					System.out.println("Unable to find able to find any match");
+				}
 				break;
 			case 2:
 				System.out.println("Please enter the Actor's ID: ");
 				userChoice = input.nextInt();
 				input.nextLine();
 				Actor actor = db.findActorById(userChoice);
+				if(actor != null) {
 				System.out.println(actor.toString("IFeelThisShouldWork"));
 				subMenuOption(actor, input);
-
+			}
+			else {
+				System.out.println("Unable to find able to find any match");
+			}
 				break;
 			case 3:
 				System.out.println("Please enter the Actors in a film by film's ID: ");
 				userChoice = input.nextInt();
 				input.nextLine();
 				List<Actor> actors = db.findActorsByFilmId(userChoice);
+				if(!actors.isEmpty()) {
 				for (Actor acter : actors) {
 					System.out.println(acter.toString("ComeOnBaby"));
 				}
 				subMenuOptionList(actors, input);
+				}
+				else {
+					System.out.println("Unable to find able to find any match");
+				}
 				break;
 			case 4:
 				System.out.println("Please enter the word you wish to check title or "
@@ -75,11 +89,16 @@ public class FilmQueryApp {
 				input.nextLine();
 				List<Film> films = db.findFilmByFilmWordSearch(userChoiceWord);
 				// List<Actor> actors = db.findActorsByFilmWordSearch(userChoiceWord);
+				if(!films.isEmpty()) {
 				for (Film film : films) {
 					System.out.println(film.toString(userChoiceWord));
 
 				}
 				subMenuOptionList(input, films);
+				}
+				else {
+					System.out.println("Unable to find able to find any match");
+				}
 				break;
 			case 0:
 				System.out.println("Have a wonderful day, Goodbye!");
@@ -109,7 +128,7 @@ public class FilmQueryApp {
 			switch (userChoice) {
 			case 1:
 				System.out.println("Printing Information");
-				System.out.println(film.toString());
+				System.out.println(actors.toString());
 				System.out.println("Printing Complete");
 
 				userChoice = 2;
