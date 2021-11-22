@@ -204,15 +204,17 @@ public boolean equals(Object obj) {
 			&& Double.doubleToLongBits(repCost) == Double.doubleToLongBits(other.repCost)
 			&& Objects.equals(title, other.title);
 }
-
-@Override
-public String toString() {
+public String toString(String limitedData) {
+	String actorString="";
+	for(Actor actor: actors) {
+		actorString += actor.toString("wasup");
+	}
 	StringBuilder builder = new StringBuilder();
-	builder.append("Film [filmId=").append(filmId).append(", \ntitle=").append(title).append(", \ndesc=").append(desc)
-			.append(", \nreleaseYear=").append(releaseYear).append(", \nlang=").append(lang).append(", \nrentDur=")
-			.append(rentDur).append(", \nrate=").append(rate).append(", \nlengt=").append(lengt).append(", \nrepCost=")
-			.append(repCost).append(", \nrating=").append(rating).append(", \nfeatures=").append(features).append(actors)
+	builder.append("Film [").append("title=").append(title).append(", \ndesc=").append(desc)
+			.append(", \nreleaseYear=").append(releaseYear).append(", \nlang=").append(lang)
+			.append(", \nrating=").append(rating).append(actorString)
 			.append("]");
+	
 	return builder.toString();
 }
 
@@ -222,6 +224,17 @@ public List<Actor> getActors() {
 
 public void setActors(List<Actor> actors) {
 	this.actors = actors;
+}
+
+@Override
+public String toString() {
+	StringBuilder builder = new StringBuilder();
+	builder.append("Film [filmId=").append(filmId).append(", title=").append(title).append(", desc=").append(desc)
+			.append(", releaseYear=").append(releaseYear).append(", lang=").append(lang).append(", rentDur=")
+			.append(rentDur).append(", rate=").append(rate).append(", lengt=").append(lengt).append(", repCost=")
+			.append(repCost).append(", rating=").append(rating).append(", features=").append(features)
+			.append(actors).append("]");
+	return builder.toString();
 }
 
 //public List<Actor> getActors() {

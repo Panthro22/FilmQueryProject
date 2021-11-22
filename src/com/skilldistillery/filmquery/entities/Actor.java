@@ -76,12 +76,10 @@ public class Actor {
 		return  Objects.equals(firstName, other.firstName) && id == other.id
 				&& Objects.equals(lastName, other.lastName);
 	}
-	
-	@Override
-	public String toString() {
+	public String toString(String limited) {
 		StringBuilder builder = new StringBuilder();
-		builder.append("\nActor [id=").append(id).append(", firstName=").append(firstName).append(", lastName=")
-				.append(lastName).append("]").append(films);
+		builder.append("\nActor [").append(" firstName=").append(firstName).append(", lastName=")
+				.append(lastName).append(films).append("]");
 		return builder.toString();
 	}
 
@@ -91,6 +89,14 @@ public class Actor {
 
 	public void setFilms(List<Film> films) {
 		this.films = films;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Actor [id=").append(id).append(", firstName=").append(firstName).append(", lastName=")
+				.append(lastName).append(films).append("]");
+		return builder.toString();
 	}
 
 //	public List<Film> getFilms() {

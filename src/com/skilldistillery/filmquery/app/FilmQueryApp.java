@@ -45,19 +45,24 @@ public class FilmQueryApp {
 				System.out.println("Please enter the Film's ID: ");
 				userChoice = input.nextInt();
 				input.nextLine();
-				System.out.println(db.findFilmById(userChoice));
+				Film oneFilm =db.findFilmById(userChoice);
+				System.out.println(oneFilm.toString("OhDearWork!"));
 				break;
 			case 2:
 				System.out.println("Please enter the Actor's ID: ");
 				userChoice = input.nextInt();
 				input.nextLine();
-				System.out.println(db.findActorById(userChoice));
+				Actor actor =db.findActorById(userChoice);
+				System.out.println( actor.toString("IFeelThisShouldWork"));
 				break;
 			case 3:
 				System.out.println("Please enter the Actors in a film by film's ID: ");
 				userChoice = input.nextInt();
 				input.nextLine();
-				System.out.println(db.findActorsByFilmId(userChoice));
+				List<Actor> actors =db.findActorsByFilmId(userChoice);
+					for(Actor acter: actors) {
+						System.out.println(acter.toString("ComeOnBaby"));
+					}
 				break;
 			case 4:
 				System.out.println("Please enter the word you wish to check title or "
@@ -65,9 +70,9 @@ public class FilmQueryApp {
 				String userChoiceWord = input.next();
 				input.nextLine();
 				List<Film> films = db.findFilmByFilmWordSearch(userChoiceWord);
-				List<Actor> actors = db.findActorsByFilmWordSearch(userChoiceWord);
+				//List<Actor> actors = db.findActorsByFilmWordSearch(userChoiceWord);
 				for (Film film : films) {
-					System.out.println(film);
+					System.out.println(film.toString(userChoiceWord));
 					
 				}
 				break;

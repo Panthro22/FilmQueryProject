@@ -241,5 +241,16 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 		}
 		return actors;
 	}
+	
+	public String toString(String limited) {
+		
+		return limited;
+	}
+	
+	public String toString() {
+		
+		return null;
+		
+	}
 
 }
