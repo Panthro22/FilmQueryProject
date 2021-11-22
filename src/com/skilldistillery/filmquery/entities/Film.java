@@ -229,10 +229,10 @@ public void setActors(List<Actor> actors) {
 @Override
 public String toString() {
 	StringBuilder builder = new StringBuilder();
-	builder.append("Film [filmId=").append(filmId).append(", title=").append(title).append(", desc=").append(desc)
-			.append(", releaseYear=").append(releaseYear).append(", lang=").append(lang).append(", rentDur=")
-			.append(rentDur).append(", rate=").append(rate).append(", lengt=").append(lengt).append(", repCost=")
-			.append(repCost).append(", rating=").append(rating).append(", features=").append(features)
+	builder.append("Film [filmId=").append(filmId).append(", \ntitle=").append(title).append(", \ndesc=").append(desc)
+			.append(", \nreleaseYear=").append(releaseYear).append(", \nlang=").append(lang).append(", \nrentDur=")
+			.append(rentDur).append(", \nrate=").append(rate).append(", \nlengt=").append(lengt).append(", \nrepCost=")
+			.append(repCost).append(", \nrating=").append(rating).append(", \nfeatures=").append(features)
 			.append(actors).append("]");
 	return builder.toString();
 }
