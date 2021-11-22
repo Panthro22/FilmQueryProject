@@ -41,4 +41,4 @@ I have learned that the JDBC allows java code to be translated into mysql and vi
 
 - [ ] When viewing film details, the user will see a list of all copies of the film in inventory, with their condition.
 
-- [ ] Write JUnit tests for DatabaseAccessorObject's methods.
+- [x] Write JUnit tests for DatabaseAccessorObject's methods.
